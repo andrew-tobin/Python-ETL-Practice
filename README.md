@@ -1,20 +1,11 @@
 # Python-ETL-Practice
-Simple projects to develop understanding of ETL processes in Python.
+Simple projects to develop understanding of ETL processes in Python, using combinations of the below ETL variants.
 
-**Extracting** from:
-1. APIs
-2. Databases (SQLite)
-3. Files/Cloud
-
-Using pandas to **transform**:
-1. Filtering
-2. Joining
-3. Aggregation
-4. Renaming/cleaning
-
-**Loading** data to:
-1. Databases
-2. Files/Cloud
+| Extracting from  | Transformations | Loading into |
+| - | - | - |
+| APIs  | (Using Pandas)  | Databases (SQLite)
+| Databases (SQLite)  | Filtering, joining, aggregation  | Files/Cloud |
+| Files/Cloud | Renaming, cleaning | |
 
 # Projects
 
