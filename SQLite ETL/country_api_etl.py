@@ -10,18 +10,25 @@ df = pd.DataFrame(data)
 
 # This contains country name, capital, region, population
 
-### TRANSFORM
+### CLEAN
 # The name column is a dict - extract the common name
 df['name'] = df['name'].apply(lambda x: x['common'])
 # The capital column is a list (of one usually) - extract the first
 df['capital'] = df['capital'].apply(lambda x: x[0] if len(x) > 0 else None)
-# Print columns
-print(df.columns)
 
-# Get the
+
+### TRANSFORM
+# Output total population by region in millions
+df = df.groupby('region').agg(
+    #population = ('population','sum')
+    #second element in agg definitions has to be function, but can use lambdas
+    population = ('population',lambda x: round(sum(x)/1000000,2))
+)
+
+### LOAD
+# Save to file
+df.to_csv('population_by_region.csv')
+
 
 # print top row 
-print(df.head(1)['name'])
-print(df.head(1)['capital'])
-print(df.head(1)['region'])
-print(df.head(1)['population'])
+print(df.head)
